@@ -1,0 +1,18 @@
+exports[`counter component suite should match the snapshot 1`] = `
+<div>
+  <h2>
+    Redux Counter:
+  </h2>
+  <p>
+    <button
+      onClick={[Function]}>
+      -
+    </button>
+    0
+    <button
+      onClick={[Function]}>
+      +
+    </button>
+  </p>
+</div>
+`;

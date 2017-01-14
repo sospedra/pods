@@ -3,7 +3,7 @@ export const DECREMENT = 'DECREMENT'
 
 import defaultState from './state'
 
-export default (state = defaultState, action) => {
+export default (state = defaultState, action = {}) => {
   switch (action.type) {
     case INCREMENT:
       return Object.assign({}, state, {

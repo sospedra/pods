@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
 import { INCREMENT, DECREMENT } from './reducer'
+import Counter from './components/Counter'
 
 const mapStateToProps = (state) => ({
   count: state.counter.count
@@ -12,22 +13,7 @@ const mapDispatchToProps = (dispatch) => ({
   onMinusClick: () => dispatch({ type: DECREMENT })
 })
 
-const CounterContainer = (props) => (
-  <div>
-    <h2>Redux Counter:</h2>
-    <p>
-      <button onClick={props.onMinusClick}>-</button>
-      {props.count}
-      <button onClick={props.onPlusClick}>+</button>
-    </p>
-  </div>
-)
-
-CounterContainer.propTypes = {
-  count: PropTypes.number.isRequired,
-  onPlusClick: PropTypes.func.isRequired,
-  onMinusClick: PropTypes.func.isRequired
-}
+const CounterContainer = (props) => (<Counter {...props} />)
 
 export default connect(
   mapStateToProps,
