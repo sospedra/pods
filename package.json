@@ -13,11 +13,11 @@
     "test:style": "standard | snazzy"
   },
   "dependencies": {
-    "react": "~0.14.7",
-    "react-dom": "~0.14.7",
-    "react-redux": "~4.3.0",
-    "react-router": "^3.0.1",
-    "redux": "~3.2.1"
+    "react": "15.x",
+    "react-dom": "15.x",
+    "react-redux": "5.x",
+    "react-router": "next",
+    "redux": "3.6.0"
   },
   "devDependencies": {
     "auto-reload-brunch": "^2.7.0",
