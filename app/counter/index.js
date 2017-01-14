@@ -1,13 +1,15 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 
+import { INCREMENT, DECREMENT } from './reducer'
+
 const mapStateToProps = (state) => ({
   count: state.counter.count
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  onPlusClick: () => dispatch({ type: 'INCREMENT' }),
-  onMinusClick: () => dispatch({ type: 'DECREMENT' })
+  onPlusClick: () => dispatch({ type: INCREMENT }),
+  onMinusClick: () => dispatch({ type: DECREMENT })
 })
 
 const CounterContainer = (props) => (
