@@ -2,9 +2,8 @@ import React from 'react'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import {
-  browserHistory,
-  Router,
-  Route
+  BrowserRouter,
+  Match
 } from 'react-router'
 
 import reducers from './master/store/reducers'
@@ -15,8 +14,8 @@ const store = createStore(reducers, state)
 
 export default () => (
   <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path='/' component={Counter} />
-    </Router>
+    <BrowserRouter>
+      <Match pattern='/' component={Counter} />
+    </BrowserRouter>
   </Provider>
 )
