@@ -1,22 +1,22 @@
-import ReactDOM from 'react-dom';
-import React from 'react';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import counterApp from './reducers';
-import App from 'components/App';
+import ReactDOM from 'react-dom'
+import React from 'react'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import counterApp from './reducers'
+import App from 'components/App'
 
-const store = createStore(counterApp, module.hot && module.hot.data && module.hot.data.counter || 0);
+const store = createStore(counterApp, module.hot && module.hot.data && module.hot.data.counter || 0)
 
 if (module.hot) {
   module.hot.accept('./reducers', () => {
-    store.replaceReducer(require('./reducers').default);
-  });
-  module.hot.accept();
+    store.replaceReducer(require('./reducers').default)
+  })
+  module.hot.accept()
 
   module.hot.dispose((data) => {
     data.counter = store.getState();
-    [].slice.apply(document.querySelector('#app').children).forEach(function(c) { c.remove() });
-  });
+    [].slice.apply(document.querySelector('#app').children).forEach(function (c) { c.remove() })
+  })
 }
 
 const load = () => {
@@ -25,11 +25,11 @@ const load = () => {
       <App />
     </Provider>,
     document.querySelector('#app')
-  );
-};
+  )
+}
 
 if (document.readyState !== 'complete') {
-  document.addEventListener('DOMContentLoaded', load);
+  document.addEventListener('DOMContentLoaded', load)
 } else {
-  load();
+  load()
 }
