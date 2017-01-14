@@ -6,7 +6,7 @@ import { BrowserRouter, Match } from 'react-router'
 import reducers from './master/store/reducers'
 import state from './master/store/state'
 import Counter from './counter'
-import Docs from './docs'
+import Info from './info'
 import Navigator from './navigator'
 
 const store = createStore(reducers, state)
@@ -16,7 +16,7 @@ export default () => (
     <BrowserRouter>
       <Navigator>
         <Match exactly pattern='/' component={Counter} />
-        <Match pattern='/docs' component={Docs} />
+        <Match pattern='/info' component={Info} />
       </Navigator>
     </BrowserRouter>
   </Provider>

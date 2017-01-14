@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 const routes = [
   { path: '/', name: 'Home' },
-  { path: '/docs', name: 'Docs' }
+  { path: '/info', name: 'More info' }
 ]
 
 const Nav = () => (
