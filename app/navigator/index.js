@@ -2,13 +2,14 @@ import React from 'react'
 import { Link } from 'react-router'
 
 const routes = [
-  { path: '/', name: 'Home' }
+  { path: '/', name: 'Home' },
+  { path: '/docs', name: 'Docs' }
 ]
 
 const Nav = () => (
   <ul className='navigator'>
-    {routes.map((route) => (
-      <li>
+    {routes.map((route, idx) => (
+      <li key={idx}>
         <Link to={route.path}>{route.name}</Link>
       </li>
     ))}
@@ -23,7 +24,10 @@ const Navigator = (props) => (
 )
 
 Navigator.propTypes = {
-  children: React.PropTypes.element.isRequired
+  children: React.PropTypes.oneOfType([
+    React.PropTypes.element.isRequired,
+    React.PropTypes.arrayOf(React.PropTypes.element.isRequired)
+  ])
 }
 
 export default Navigator
