@@ -5,19 +5,7 @@ import { createStore } from 'redux'
 import counterApp from './reducers'
 import App from 'components/App'
 
-const store = createStore(counterApp, module.hot && module.hot.data && module.hot.data.counter || 0)
-
-if (module.hot) {
-  module.hot.accept('./reducers', () => {
-    store.replaceReducer(require('./reducers').default)
-  })
-  module.hot.accept()
-
-  module.hot.dispose((data) => {
-    data.counter = store.getState();
-    [].slice.apply(document.querySelector('#app').children).forEach(function (c) { c.remove() })
-  })
-}
+const store = createStore(counterApp, 0)
 
 const load = () => {
   ReactDOM.render(
